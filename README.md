@@ -22,6 +22,21 @@ npx expo start
 
 Abre el proyecto en Expo Go, o en el navegador con `npx expo start --web`. En un teléfono físico, el servidor tiene que estar encendido en la misma red. Si no conecta, en Entrar abre Servidor y pon la IP de tu computadora, por ejemplo `http://192.168.1.20:4000`.
 
+## Reloj
+
+`watch/` es Linde Reloj, la app de Wear OS. Activa la protección, pide ayuda con un SOS y muestra quién del hogar está protegido. Recibe la sesión del teléfono, así que necesita la build de desarrollo de Linde Hogar; con Expo Go no se conecta.
+
+```bash
+cd mobile
+npx expo prebuild --platform android
+cd android && ./gradlew assembleDebug
+
+cd ../../watch
+./gradlew assembleDebug
+```
+
+Usa JDK 21. Instala cada APK en su emulador, empareja el reloj con el teléfono desde la app Pixel Watch y en Linde Hogar toca Perfil, Vincular reloj.
+
 ## Cómo se prueba
 
 1. Crea una cuenta y abre el hogar. Esa persona es la central.

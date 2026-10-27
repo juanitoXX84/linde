@@ -13,12 +13,13 @@ import { pushToUsers } from "./notify.js";
 
 const PORT = Number(process.env.PORT || 4000);
 const HOUR48 = 48 * 60 * 60 * 1000;
-const EVENT_TYPES = new Set(["fall", "impact", "struggle", "manual"]);
+const EVENT_TYPES = new Set(["fall", "impact", "struggle", "manual", "sos"]);
 const EVENT_COPY = {
   fall: "Posible caída",
   impact: "Impacto fuerte",
   struggle: "Forcejeo",
   manual: "Alerta de prueba",
+  sos: "Pidió ayuda desde el reloj",
 };
 
 function storedName(file) {

@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   title: { ...type.display, fontSize: 36 },
   codeCard: {
     backgroundColor: colors.raised,
-    borderRadius: 12,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.line,
     padding: 20,

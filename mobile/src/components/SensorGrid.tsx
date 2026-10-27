@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flexBasis: "47%",
     flexGrow: 1,
     backgroundColor: colors.raised,
-    borderRadius: 12,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.line,
     padding: 14,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   wide: {
     width: "100%",
     backgroundColor: colors.raised,
-    borderRadius: 12,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.line,
     padding: 14,

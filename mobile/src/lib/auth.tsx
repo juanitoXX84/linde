@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { api, clearSession, saveSession } from "@/lib/api";
 import { getItem } from "@/lib/storage";
 import type { Home, Member, User } from "@/lib/types";
+import { syncSessionToWatch, unlinkWatch } from "@/lib/wearSync";
 
 type AuthState = {
   ready: boolean;
@@ -31,6 +32,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const me = await api.me();
     setUser(me.user);
     setHome(me.home);
+    syncSessionToWatch().catch(() => {});
     return me.home;
   }, []);
 
@@ -50,6 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = useCallback(async () => {
     await clearSession();
+    unlinkWatch().catch(() => {});
     setUser(null);
     setHome(null);
   }, []);

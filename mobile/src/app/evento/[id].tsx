@@ -97,5 +97,5 @@ const styles = StyleSheet.create({
   copy: { ...type.body, color: colors.muted, lineHeight: 22 },
   place: { ...type.medium, color: colors.copper, fontSize: 16 },
   ok: { ...type.body, color: colors.sage, fontSize: 15, lineHeight: 21 },
-  video: { height: 280, borderRadius: 12, backgroundColor: "#000" },
+  video: { height: 280, borderRadius: 16, backgroundColor: "#000" },
 });

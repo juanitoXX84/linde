@@ -176,7 +176,7 @@ export default function Countdown() {
 
 const styles = StyleSheet.create({
   fill: { flex: 1, justifyContent: "center" },
-  camera: { flex: 1, borderRadius: 12, overflow: "hidden" },
+  camera: { flex: 1, borderRadius: 16, overflow: "hidden" },
   copyBlock: { gap: 8, paddingTop: 18 },
   actions: { marginTop: 8 },
   number: { ...type.display, fontSize: 72, lineHeight: 78, textAlign: "center" },

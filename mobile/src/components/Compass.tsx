@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flexBasis: "100%",
     backgroundColor: colors.raised,
-    borderRadius: 12,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.line,
     padding: 16,

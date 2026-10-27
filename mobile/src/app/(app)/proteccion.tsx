@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     ...type.medium,
     color: colors.danger,
     backgroundColor: colors.dangerSoft,
-    borderRadius: 10,
+    borderRadius: 16,
     padding: 14,
     overflow: "hidden",
   },

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Linde",
+    "name": "Linde Hogar",
     "slug": "linde",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -39,7 +39,7 @@
         "POST_NOTIFICATIONS"
       ],
       "adaptiveIcon": {
-        "backgroundColor": "#060A12",
+        "backgroundColor": "#0E0B09",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -96,13 +96,13 @@
       [
         "expo-notifications",
         {
-          "color": "#3DDCFF"
+          "color": "#FFA94D"
         }
       ],
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#060A12",
+          "backgroundColor": "#0E0B09",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }

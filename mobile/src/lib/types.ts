@@ -1,7 +1,7 @@
 export type Role = "central" | "member";
 export type Proximity = "cerca" | "lejos";
 export type EventStatus = "pending" | "cancelled" | "alert" | "resolved";
-export type EventType = "fall" | "impact" | "struggle" | "manual";
+export type EventType = "fall" | "impact" | "struggle" | "manual" | "sos";
 
 export type Sensors = {
   accel: number | null;

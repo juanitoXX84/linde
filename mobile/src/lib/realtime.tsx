@@ -71,7 +71,6 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
             name: "Alertas",
             importance: Notifications.AndroidImportance.MAX,
             vibrationPattern: [0, 280, 120, 280],
-            sound: "default",
           });
         }
         if (granted && Notifications.getExpoPushTokenAsync) {

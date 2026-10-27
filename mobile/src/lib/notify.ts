@@ -14,7 +14,7 @@ type Notifier = {
   requestPermissionsAsync: () => Promise<PermissionStatus>;
   setNotificationChannelAsync: (
     id: string,
-    channel: { name: string; importance: number; vibrationPattern: number[]; sound: string }
+    channel: { name: string; importance: number; vibrationPattern: number[] }
   ) => Promise<unknown>;
   scheduleNotificationAsync: (request: {
     content: { title: string; body: string; data?: Record<string, unknown>; sound?: boolean };
@@ -95,7 +95,6 @@ async function ensureReady() {
           name: "Alertas",
           importance: Notifications.AndroidImportance.MAX,
           vibrationPattern: [0, 280, 120, 280],
-          sound: "default",
         });
       }
       return true;

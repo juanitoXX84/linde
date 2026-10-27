@@ -7,6 +7,7 @@ import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { getServer } from "@/lib/storage";
 import { colors, type } from "@/lib/theme";
+import { syncSessionToWatch, watchSyncCopy } from "@/lib/wearSync";
 
 export default function Profile() {
   const { user, home, signOut, refresh } = useAuth();
@@ -20,6 +21,16 @@ export default function Profile() {
   const [saved, setSaved] = useState("");
   const [busy, setBusy] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [watch, setWatch] = useState("");
+  const [linking, setLinking] = useState(false);
+
+  async function linkWatch() {
+    setLinking(true);
+    setWatch("");
+    const result = await syncSessionToWatch();
+    setWatch(watchSyncCopy[result]);
+    setLinking(false);
+  }
 
   useEffect(() => {
     getServer().then(setServer);
@@ -110,6 +121,8 @@ export default function Profile() {
       {error ? <Notice>{error}</Notice> : null}
       {saved ? <Text style={styles.saved}>{saved}</Text> : null}
       <Button label={busy ? "Guardando" : "Guardar"} disabled={busy || uploading} onPress={save} />
+      <Button label={linking ? "Enviando al reloj…" : "Vincular reloj"} tone="quiet" disabled={linking} onPress={linkWatch} />
+      {watch ? <Text style={styles.watch}>{watch}</Text> : null}
       <Button label="Cerrar sesión" tone="quiet" onPress={async () => { await signOut(); router.replace("/"); }} />
       {home ? <Button label={home.role === "central" ? "Cerrar el hogar" : "Salir del hogar"} tone="danger" onPress={leave} /> : null}
     </Screen>
@@ -135,4 +148,5 @@ const styles = StyleSheet.create({
   photoMark: { ...type.display, fontSize: 32, color: colors.copper },
   photoCopy: { ...type.body, color: colors.muted, flex: 1, fontSize: 15, lineHeight: 21 },
   saved: { ...type.body, color: colors.sage, fontSize: 15 },
+  watch: { ...type.body, color: colors.muted, fontSize: 14, lineHeight: 20 },
 });
